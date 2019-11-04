@@ -1,0 +1,8 @@
+*.iml
+.idea
+**/out/*
+output/*
+**/target
+**/build
+**/.DS_Store
+classes
