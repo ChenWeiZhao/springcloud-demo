@@ -4,14 +4,12 @@ import com.imooc.homepage.entity.HomepageUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * <h1>HomepageUser 数据表访问接口定义</h1>
- * Created by Qinyi.
+ * HomepageUser 数据表访问接口定义
  */
-public interface HomepageUserDao
-        extends JpaRepository<HomepageUser, Long> {
+public interface HomepageUserDao extends JpaRepository<HomepageUser, Long> {
 
     /**
-     * <h2>通过用户名寻找数据记录</h2>
-     * */
+     * 通过用户名寻找数据记录
+     */
     HomepageUser findByUsername(String username);
 }

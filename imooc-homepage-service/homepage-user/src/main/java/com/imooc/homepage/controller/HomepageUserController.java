@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <h1>用户服务对外接口</h1>
- * Created by Qinyi.
  */
 @Slf4j
 @RestController

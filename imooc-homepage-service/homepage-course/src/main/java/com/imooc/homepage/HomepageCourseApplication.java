@@ -6,8 +6,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
- * <h1>SpringBoot 启动入口</h1>
- * Created by Qinyi.
+ * SpringBoot 启动入口
+ * @EnableJpaAuditing 自动加入插入时间戳，更新时间戳等
+ * @EnableEurekaClient 向EurekaServer注册
  */
 @EnableJpaAuditing
 @EnableEurekaClient

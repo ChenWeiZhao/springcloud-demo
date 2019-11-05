@@ -4,8 +4,8 @@ import com.imooc.homepage.entity.HomepageCourse;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Created by Qinyi.
+ * JPA接口
+ * <实体表类，主键类型>
  */
-public interface HomepageCourseDao extends
-        JpaRepository<HomepageCourse, Long> {
+public interface HomepageCourseDao extends JpaRepository<HomepageCourse, Long> {
 }

@@ -15,7 +15,6 @@ import java.util.Arrays;
 
 /**
  * <h1>课程服务测试</h1>
- * Created by Qinyi.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {Application.class},
@@ -43,20 +42,14 @@ public class HomepageCourseServiceTest {
                 "https://www.imooc.com",
                 "广告系统的设计与实现"
         );
-        System.out.println(courseDao.saveAll(
-                Arrays.asList(course1, course2)
-        ).size());
+        System.out.println(courseDao.saveAll(Arrays.asList(course1, course2)).size());
     }
 
     @Test
     public void testGetCourseInfo() {
 
-        System.out.println(JSON.toJSONString(
-                courseService.getCourseInfo(6L)
-        ));
-        System.out.println(JSON.toJSONString(
-                courseService.getCourseInfo(8L)
-        ));
+        System.out.println(JSON.toJSONString(courseService.getCourseInfo(6L)));
+        System.out.println(JSON.toJSONString(courseService.getCourseInfo(8L)));
     }
 
     @Test

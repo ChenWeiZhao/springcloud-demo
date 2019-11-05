@@ -5,8 +5,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * <h1>基本的用户信息</h1>
- * Created by Qinyi.
+ * 基本的用户信息
+ * @Data 增加getter和settter方法
+ * @NoArgsConstructor  无参构造函数
+ * @AllArgsConstructor 全参构造函数
  */
 @Data
 @NoArgsConstructor

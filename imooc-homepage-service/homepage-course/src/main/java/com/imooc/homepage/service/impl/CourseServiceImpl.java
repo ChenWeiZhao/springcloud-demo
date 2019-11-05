@@ -17,7 +17,6 @@ import java.util.stream.Collectors;
 
 /**
  * <h1>课程服务功能实现</h1>
- * Created by Qinyi.
  */
 @Slf4j
 @Service
@@ -44,24 +43,19 @@ public class CourseServiceImpl implements ICourseService {
             return Collections.emptyList();
         }
 
-        List<HomepageCourse> courses = homepageCourseDao.findAllById(
-                request.getIds()
-        );
-        return courses.stream()
-                .map(this::buildCourseInfo)
-                .collect(Collectors.toList());
+        List<HomepageCourse> courses = homepageCourseDao.findAllById(request.getIds());
+        return courses.stream().map(this::buildCourseInfo).collect(Collectors.toList());
     }
 
     /**
      * <h2>根据数据记录构造对象信息</h2>
-     * */
+     */
     private CourseInfo buildCourseInfo(HomepageCourse course) {
 
         return CourseInfo.builder()
                 .id(course.getId())
                 .courseName(course.getCourseName())
-                .courseType(course.getCourseType() == 0
-                        ? "免费课程" : "实战课程")
+                .courseType(course.getCourseType() == 0 ? "免费课程" : "实战课程")
                 .courseIcon(course.getCourseIcon())
                 .courseIntro(course.getCourseIntro())
                 .build();

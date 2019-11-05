@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * <h1>自定义过滤器，请求响应时间</h1>
- * Created by Qinyi.
+ * 自定义过滤器，请求响应时间
+ * 注入@Slf4j日志
  */
 @Slf4j
 @Component
@@ -22,6 +22,11 @@ public class AccessLogFilter extends ZuulFilter {
         return FilterConstants.POST_TYPE;
     }
 
+    /**
+     * zuul默认执行优先级为1000
+     * 需要在请求post之前调用该filter
+     * 需要在整个请求返回之前，执行该过滤器
+     */
     @Override
     public int filterOrder() {
         return FilterConstants.SEND_RESPONSE_FILTER_ORDER - 1;
@@ -34,13 +39,14 @@ public class AccessLogFilter extends ZuulFilter {
 
     @Override
     public Object run() throws ZuulException {
-
+        //请求上下文
         RequestContext ctx = RequestContext.getCurrentContext();
         Long startTime = (Long) ctx.get("startTime");
 
         HttpServletRequest request = ctx.getRequest();
+        //拿到请求URI
         String uri = request.getRequestURI();
-
+        //请求时间
         long duration = System.currentTimeMillis() - startTime;
 
         log.info("uri: {}, duration: {}ms", uri, duration / 100);

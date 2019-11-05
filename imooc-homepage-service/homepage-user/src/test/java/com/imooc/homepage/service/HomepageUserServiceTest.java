@@ -16,7 +16,6 @@ import java.util.Arrays;
 
 /**
  * <h1>用户服务测试用例</h1>
- * Created by Qinyi.
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = {Application.class})

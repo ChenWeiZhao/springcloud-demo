@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 /**
- * <h1>通过 Feign 访问课程微服务</h1>
- * Created by Qinyi.
+ * 通过 Feign 访问课程微服务
+ * 指定访问的服务名
  */
-@FeignClient(value = "eureka-client-homepage-course",
-fallback = CourseClientHystrix.class)
+@FeignClient(value = "eureka-client-homepage-course", fallback = CourseClientHystrix.class)
 public interface CourseClient {
 
-    @RequestMapping(value = "/homepage-course/get/course",
-            method = RequestMethod.GET)
+    /**
+     * 通过HTTP的形式调用
+     */
+    @RequestMapping(value = "/homepage-course/get/course", method = RequestMethod.GET)
     CourseInfo getCourseInfo(Long id);
 
-    @RequestMapping(value = "/homepage-course/get/courses",
-            method = RequestMethod.POST)
+    @RequestMapping(value = "/homepage-course/get/courses", method = RequestMethod.POST)
     List<CourseInfo> getCourseInfos(@RequestBody CourseInfosRequest request);
 }

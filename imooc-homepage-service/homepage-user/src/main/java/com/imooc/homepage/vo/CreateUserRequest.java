@@ -7,7 +7,6 @@ import org.apache.commons.lang.StringUtils;
 
 /**
  * <h1>创建用户请求对象定义</h1>
- * Created by Qinyi.
  */
 @Data
 @NoArgsConstructor
@@ -19,10 +18,9 @@ public class CreateUserRequest {
 
     /**
      * <h2>请求有效性验证</h2>
-     * */
+     */
     public boolean validate() {
 
-        return StringUtils.isNotEmpty(username)
-                && StringUtils.isNotEmpty(email);
+        return StringUtils.isNotEmpty(username) && StringUtils.isNotEmpty(email);
     }
 }

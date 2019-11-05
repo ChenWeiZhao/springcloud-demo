@@ -8,8 +8,8 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * <h1>熔断降级策略</h1>
- * Created by Qinyi.
+ * 熔断降级策略
+ * 继承CourseClient接口，若发生错误，提供兜底的策略
  */
 @Component
 public class CourseClientHystrix implements CourseClient {

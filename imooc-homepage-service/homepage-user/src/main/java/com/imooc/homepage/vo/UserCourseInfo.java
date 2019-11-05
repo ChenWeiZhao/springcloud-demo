@@ -11,7 +11,6 @@ import java.util.List;
 
 /**
  * <h1>用户课程信息对象定义</h1>
- * Created by Qinyi.
  */
 @Data
 @NoArgsConstructor

@@ -9,7 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
  * <h1>用户服务启动入口</h1>
- * Created by Qinyi.
+ * @EnableFeignClients 使用Feign功能，远程调用微服务
+ * @EnableCircuitBreaker 使用熔断功能
  */
 @EnableJpaAuditing
 @EnableFeignClients

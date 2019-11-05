@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * <h1>课程对外服务接口</h1>
- * Created by Qinyi.
+ * @RestController 对外返回都是json
  */
 @Slf4j
 @RestController
@@ -39,9 +39,13 @@ public class HomepageCourseController {
         return courseService.getCourseInfo(id);
     }
 
+    /**
+     * @RequestBody 参数绑定
+     * @param request
+     * @return
+     */
     @PostMapping("/get/courses")
-    public List<CourseInfo> getCourseInfos(
-            @RequestBody CourseInfosRequest request) {
+    public List<CourseInfo> getCourseInfos(@RequestBody CourseInfosRequest request) {
         log.info("<homepage-course>: get courses -> {}",
                 JSON.toJSONString(request));
         return courseService.getCourseInfos(request);

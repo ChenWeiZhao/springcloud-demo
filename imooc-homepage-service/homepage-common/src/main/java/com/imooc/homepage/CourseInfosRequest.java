@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * <h1>课程信息请求对象定义</h1>
- * Created by Qinyi.
+ * 课程信息请求对象定义
  */
 @Data
 @NoArgsConstructor

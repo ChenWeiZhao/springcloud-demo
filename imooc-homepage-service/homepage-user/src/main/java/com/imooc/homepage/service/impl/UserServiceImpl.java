@@ -49,19 +49,14 @@ public class UserServiceImpl implements IUserService {
             return UserInfo.invalid();
         }
 
-        HomepageUser oldUser = homepageUserDao.findByUsername(
-                request.getUsername()
-        );
+        HomepageUser oldUser = homepageUserDao.findByUsername(request.getUsername());
         if (null != oldUser) {
             return UserInfo.invalid();
         }
 
-        HomepageUser newUser = homepageUserDao.save(
-                new HomepageUser(request.getUsername(), request.getEmail())
-        );
+        HomepageUser newUser = homepageUserDao.save(new HomepageUser(request.getUsername(), request.getEmail()));
 
-        return new UserInfo(newUser.getId(),
-                newUser.getUsername(), newUser.getEmail());
+        return new UserInfo(newUser.getId(), newUser.getUsername(), newUser.getEmail());
     }
 
     @Override
@@ -74,8 +69,7 @@ public class UserServiceImpl implements IUserService {
 
         HomepageUser curUser = user.get();
 
-        return new UserInfo(curUser.getId(),
-                curUser.getUsername(), curUser.getEmail());
+        return new UserInfo(curUser.getId(), curUser.getUsername(), curUser.getEmail());
     }
 
     @Override
@@ -87,11 +81,9 @@ public class UserServiceImpl implements IUserService {
         }
 
         HomepageUser homepageUser = user.get();
-        UserInfo userInfo = new UserInfo(homepageUser.getId(),
-                homepageUser.getUsername(), homepageUser.getEmail());
+        UserInfo userInfo = new UserInfo(homepageUser.getId(), homepageUser.getUsername(), homepageUser.getEmail());
 
-        List<HomepageUserCourse> userCourses =
-                homepageUserCourseDao.findAllByUserId(id);
+        List<HomepageUserCourse> userCourses = homepageUserCourseDao.findAllByUserId(id);
         if (CollectionUtils.isEmpty(userCourses)) {
             return new UserCourseInfo(userInfo, Collections.emptyList());
         }

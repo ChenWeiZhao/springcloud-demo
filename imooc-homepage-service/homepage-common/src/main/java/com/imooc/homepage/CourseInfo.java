@@ -6,8 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * <h1>课程信息</h1>
- * Created by Qinyi.
+ * 课程信息
+ *
  */
 @Data
 @Builder

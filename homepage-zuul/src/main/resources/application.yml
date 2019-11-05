@@ -12,6 +12,7 @@ eureka:
 
 zuul:
   prefix: /imooc
+#  路由，路径访问的地址
   routes:
     course:
       path: /homepage-course/**

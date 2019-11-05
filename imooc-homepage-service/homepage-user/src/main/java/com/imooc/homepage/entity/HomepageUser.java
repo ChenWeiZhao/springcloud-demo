@@ -19,7 +19,6 @@ import java.util.Date;
 
 /**
  * <h1>homepage_user 表对应的实体类定义</h1>
- * Created by Qinyi.
  */
 @Data
 @NoArgsConstructor

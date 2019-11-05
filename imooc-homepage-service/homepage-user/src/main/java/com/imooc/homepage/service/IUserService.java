@@ -6,7 +6,6 @@ import com.imooc.homepage.vo.UserCourseInfo;
 
 /**
  * <h1>用户相关服务接口定义</h1>
- * Created by Qinyi.
  */
 public interface IUserService {
 
